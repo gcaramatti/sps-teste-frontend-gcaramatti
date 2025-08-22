@@ -65,5 +65,5 @@ O frontend consome as rotas do backend `test-sps-server`:
 
 ```
 email: admin@spsgroup.com.br
-password: 1234
+password: admin123
 ```
