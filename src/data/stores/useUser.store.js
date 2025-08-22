@@ -5,4 +5,8 @@ export const useUser = create((set) => ({
     setAuthUser: (user) => {
       set({ authUser: user });
     },
+    logout: () => {
+      localStorage.removeItem('token');
+      set({ authUser: {} });
+    }
 }));
