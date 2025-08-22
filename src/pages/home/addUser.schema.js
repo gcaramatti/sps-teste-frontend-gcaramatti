@@ -7,8 +7,7 @@ export const AddUserSchema = yup.object().shape({
     .email(validationText.invalidEmail)
     .required(validationText.fieldRequired),
     password: yup
-    .string()
-    .required(validationText.fieldRequired),
+    .string(),
     name: yup
     .string()
     .required(validationText.fieldRequired),
