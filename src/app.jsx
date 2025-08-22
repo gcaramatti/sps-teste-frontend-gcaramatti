@@ -1,10 +1,10 @@
-import { useUser } from "./data/stores/useUser.store";
 import { Header } from "./components/header/header.component"
 import { AppRoutes } from "./shared/routes/routes.index";
 import { Toaster } from "sonner";
+import { useAuthUser } from "./shared/hooks/useAuthUser";
 
 export function App() {
-    const { authUser } = useUser();
+    const { authUser } = useAuthUser();
     const isLoggedIn = authUser && authUser?.id && authUser.id !== undefined;
 
     return (

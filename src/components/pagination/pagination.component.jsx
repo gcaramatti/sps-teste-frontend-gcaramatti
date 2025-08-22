@@ -27,7 +27,7 @@ export function Pagination({
             options={pageSizeOptions}
             defaultValue={pageSizeOptions.find((value) => parseInt(value.value) === pageSize)
               ?.label}
-            placeholder="1"
+            placeholder="3"
             onChangeWithoutControl={(data) => onChangePageSize(data.value)} 
             control={undefined} 
             maxMenuHeight={undefined} 

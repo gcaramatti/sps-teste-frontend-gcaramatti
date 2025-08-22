@@ -14,7 +14,7 @@ export function HomePage() {
   const { isAlertOpen, setIsAlertOpen, confirmDelete } = alert;
     
     return (
-        <div className="flex justify-center">
+        <div className="flex justify-center px-[20px]">
             <AlertDialog
               isOpen={isAlertOpen}
               title="Confirmar exclusão"
@@ -23,7 +23,7 @@ export function HomePage() {
               onConfirm={() => confirmDelete()}
             />
 
-            <Modal isOpen={modal.isOpenModal} onClose={modal.closeModalAddUser} title="Adicionar usuário" actionLabel="Adicionar" onSubmit={form.onSubmitAddUser()} >
+            <Modal isOpen={modal.isOpenModal} onClose={modal.closeModalAddUser} title={modal.modalTitle} actionLabel="Adicionar" onSubmit={form.onSubmitAddUser()} >
                 <div className="flex flex-col gap-4">
                     {userToEdit.current.id && <p>Cadastrado em: {userToEdit.current.createdAt}</p>}
                     <div className="flex flex-col md:flex-row gap-2">

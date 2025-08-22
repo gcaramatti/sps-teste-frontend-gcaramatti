@@ -13,7 +13,8 @@ export function useHomePage() {
     const [isOpenModal, setIsOpenModal] = useState(false);
     const [isEditForm, setIsEditForm] = useState(false);
     const [isReadForm, setIsReadForm] = useState(false);
-    const [usersPagination, setUsersPagination] = useState({ page: 1, pageSize: 1, total: 0 });
+    const [modalTitle, setModalTitle] = useState('Adicionar usuário');
+    const [usersPagination, setUsersPagination] = useState({ page: 1, pageSize: 3, total: 0 });
     const params = {
         page: usersPagination.page,
         pageSize: usersPagination.pageSize
@@ -111,6 +112,7 @@ export function useHomePage() {
     }
 
     function editUser(row) {
+        setModalTitle('Editar usuário');
         fillForm(row);
         setIsEditForm(true);
         userToEdit.current = row;
@@ -118,6 +120,7 @@ export function useHomePage() {
     }
 
     function readUser(row) {
+        setModalTitle('Detalhes do usuário');
         fillForm(row);
         setIsEditForm(false);
         setIsReadForm(true);
@@ -167,7 +170,7 @@ export function useHomePage() {
         table: { userList, usersTableColumns }, 
         pagination: { usersPagination, onChangePage, onChangePerPage }, isLoading: isLoadingLoginQuery, 
         form: { control, errors, onSubmitAddUser, isEditForm, isReadForm }, 
-        modal: { isOpenModal, openModalAddUser, closeModalAddUser },
+        modal: { modalTitle, isOpenModal, openModalAddUser, closeModalAddUser },
         deleteUser, editUser, readUser, userToEdit,
         alert: { isAlertOpen, setIsAlertOpen, confirmDelete }
     };

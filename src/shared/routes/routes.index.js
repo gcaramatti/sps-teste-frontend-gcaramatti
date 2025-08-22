@@ -1,12 +1,12 @@
 import { Navigate, useRoutes } from "react-router-dom";
 import { HomePage } from "../../pages/home/home.page";
 import { LoginPage } from "../../pages/login/login.page";
-import { useUser } from "../../data/stores/useUser.store";
+import { useAuthUser } from "../hooks/useAuthUser";
 
 export function AppRoutes() {
-      const { authUser } = useUser();
-      const isLoggedIn = authUser && authUser?.id && authUser.id !== undefined;
-      
+    const { authUser } = useAuthUser();
+    const isLoggedIn = authUser && authUser?.id && authUser.id !== undefined;
+    console.log(isLoggedIn, authUser);
     return useRoutes([
         {
             path: '/',

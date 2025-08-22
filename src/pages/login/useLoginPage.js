@@ -20,9 +20,9 @@ export function useLoginPage() {
     const mutation = useMutation({
         mutationFn: async (loginData) => await loginMutation.mutation(loginData),
         onSuccess: (response) => {
-            toast.success('Login realizado com sucesso!');
-            setAuthUserEnabled(true);
             localStorage.setItem('token', response.data.token);
+            setAuthUserEnabled(true);
+            toast.success('Login realizado com sucesso!');
         },
     });
 
@@ -32,7 +32,6 @@ export function useLoginPage() {
         queryFn: () =>
         getAuthUserQuery.query()
             .then(data => {
-                console.log(data.data.data);
                 setAuthUser(data.data.data);
                 navigate('/');
                 return data;
