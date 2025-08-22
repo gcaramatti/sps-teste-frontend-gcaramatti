@@ -64,6 +64,6 @@ O frontend consome as rotas do backend `test-sps-server`:
 4. Faça login com o usuário admin do backend:
 
 ```
-email: admin@sps.com.br
+email: admin@sps.com
 password: admin123
 ```
